@@ -5,7 +5,7 @@ local dutyBlips = {}
 local function CreateDutyBlips(playerId, playerLabel, playerJob, playerLocation)
     local ped = GetPlayerPed(playerId)
     local blip = GetBlipFromEntity(ped)
-    if not DoesBlipExist(blip) then
+    if not DoesBlipExist(blip) and not playerId == cache.playerId then
         if NetworkIsPlayerActive(playerId) then
             blip = AddBlipForEntity(ped)
         else
@@ -25,11 +25,6 @@ local function CreateDutyBlips(playerId, playerLabel, playerJob, playerLocation)
         AddTextComponentString(playerLabel)
         EndTextCommandSetBlipName(blip)
         dutyBlips[#dutyBlips + 1] = blip
-    end
-
-    if GetBlipFromEntity(cache.ped) == blip then
-        -- Ensure we remove our own blip.
-        RemoveBlip(blip)
     end
 end
 
