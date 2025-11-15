@@ -121,6 +121,7 @@ local function takeOutVehicle(vehicleInfo)
     setCarItemsInfo()
     SetEntityHeading(veh, coords.w)
     SetVehicleFuelLevel(veh, 100.0)
+    SetVehicleDirtLevel(veh, 0.0)
     if config.vehicleSettings[vehicleInfo] then
         if config.vehicleSettings[vehicleInfo].extras then
             qbx.setVehicleExtras(veh, config.vehicleSettings[vehicleInfo].extras)
