@@ -138,12 +138,6 @@ return {
         },
     },
 
-    carItems = {
-        {name = 'heavyarmor', amount = 2, info = {}, type = 'item', slot = 1},
-        {name = 'empty_evidence_bag', amount = 10, info = {}, type = 'item', slot = 2},
-        {name = 'police_stormram', amount = 1, info = {}, type = 'item', slot = 3},
-    },
-
     vehicleSettings = {
         car1 = { --- Model name
             extras = {

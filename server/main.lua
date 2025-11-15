@@ -117,6 +117,17 @@ lib.callback.register('qbx_policejob:server:spawnVehicle', function(source, mode
     SetVehicleNumberPlateText(veh, plate)
     if giveKeys == true then exports.qbx_vehiclekeys:GiveKeys(source, veh) end
 
+    lib.timer(500, function()
+        exports.ox_inventory:ClearInventory('glove'..plate)
+        exports.ox_inventory:ClearInventory('trunk'..plate)
+
+        for _, item in ipairs(sharedConfig.carItems) do
+            if item.type == 'item' and exports.ox_inventory:CanCarryItem('trunk'..plate, item.name, item.amount) then
+                exports.ox_inventory:AddItem('trunk'..plate, item.name, item.amount, item.info, item.slot)
+            end
+        end
+    end, true)
+
     if vehId then Entity(veh).state.vehicleid = vehId end
     return netId
 end)
