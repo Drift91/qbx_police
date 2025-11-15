@@ -68,5 +68,13 @@ return {
             {fine = 250, maxSpeed = 80},
             {fine = 500, maxSpeed = 180},
         }
+    },
+
+    carItems = {
+        {name = 'armour', amount = 1, info = {}, type = 'item', slot = 1},
+        {name = 'armour', amount = 1, info = {}, type = 'item', slot = 2},
+        {name = 'empty_evidence_bag', amount = 10, info = {}, type = 'item', slot = 3},
+        --{name = 'police_stormram', amount = 1, info = {}, type = 'item', slot = 4},
     }
+
 }
