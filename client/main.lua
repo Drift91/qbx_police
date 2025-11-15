@@ -17,9 +17,13 @@ local function CreateDutyBlips(playerId, playerLabel, playerJob, playerLocation)
         SetBlipRotation(blip, math.ceil(playerLocation.w))
         SetBlipScale(blip, 1.0)
         if playerJob == 'police' then
-            SetBlipColour(blip, 38)
+            SetBlipColour(blip, 3)
+        elseif playerJob == 'sheriff' then
+            SetBlipColour(blip, 2)
+        elseif playerJob == 'trooper' then
+            SetBlipColour(blip, 10)
         else
-            SetBlipColour(blip, 5)
+            SetBlipColour(blip, 1)
         end
         SetBlipAsShortRange(blip, true)
         BeginTextCommandSetBlipName('STRING')

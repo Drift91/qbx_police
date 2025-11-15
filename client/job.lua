@@ -146,7 +146,7 @@ local function addGarageMenuItems(destinationOptions, sourceOptions)
 end
 
 local function openGarageMenu()
-    local authorizedVehicles = config.authorizedVehicles[QBX.PlayerData.job.grade.level]
+    local authorizedVehicles = config.authorizedVehicles[QBX.PlayerData.job.name][QBX.PlayerData.job.grade.level]
     local options = {}
 
     options = addGarageMenuItems(options, authorizedVehicles)
@@ -441,7 +441,7 @@ if config.useTarget then
                     label = locale('info.onoff_duty'),
                     icon = 'fa-solid fa-sign-in-alt',
                     onSelect = ToggleDuty,
-                    groups = 'police'
+                    groups = {'police', 'sheriff', 'trooper'}
                 }}
             })
         end
